@@ -2,8 +2,12 @@
   (:require [reagent.core :as r]))
 
 (.log js/console "Hey Seymore sup?!")
+
+(defn on-click-function []
+  (.log js/console "Hey Seymore sup?!"))
+
 (defn some-component []
-  [:div
+  [:div { :on-click #(on-click-function) }
    [:h3 "I am a component!"]
    [:p.someclass
     "I have " [:strong "bold"]
